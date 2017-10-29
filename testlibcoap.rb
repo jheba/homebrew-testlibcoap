@@ -11,6 +11,8 @@ class Testlibcoap < Formula
     sha256 "a8b3fe01f85e8d9345dbe4ceddda24abd244f1b4055abcfef36e73b26e14ae86" => :el_capitan
   end
 
+  option "without-examples", "Build without examples"
+
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build

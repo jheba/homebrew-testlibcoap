@@ -23,7 +23,7 @@ class Testlibcoap < Formula
         --prefix=#{prefix}
     ]
 
-    args << "--disable-examples" if build.without "examples"
+    args << "--disable-examples" if build.without? "examples"
 
     system "./autogen.sh"
     system "./configure", *args

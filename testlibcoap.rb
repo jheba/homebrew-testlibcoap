@@ -11,7 +11,7 @@ class Testlibcoap < Formula
     sha256 "a8b3fe01f85e8d9345dbe4ceddda24abd244f1b4055abcfef36e73b26e14ae86" => :el_capitan
   end
 
-  #option "with-examples", "Build without examples"
+  option "with-examples", "Build without examples"
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
@@ -24,6 +24,9 @@ class Testlibcoap < Formula
     ]
 
     #args << "--enable-examples" if build.with? "examples"
+    if build.with? "examples"
+        args << "--enable-examples"
+    end
 
     system "./autogen.sh"
     system "./configure", *args
